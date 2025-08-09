@@ -1,0 +1,162 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: url('./assests/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Arial', sans-serif;
+}
+
+.app-container {
+  max-width: 600px;
+  margin: 50px auto;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #007bff;
+}
+
+.tagline {
+  text-align: center;
+  font-size: 1rem;
+  color: #555;
+  font-style: italic;
+  margin-top: -10px;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in forwards;
+  animation-delay: 0.5s; /* starts after title appears */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.chat-box {
+  min-height: 200px;
+  border: 1px solid #ccc;
+  padding: 15px;
+  background: #f9f9f9;
+  overflow-y: auto;
+  border-radius: 10px;
+  
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Space between each message bubble */
+}
+.typing-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e4e6eb;
+  padding: 8px 12px;
+  border-radius: 15px;
+  max-width: fit-content;
+}
+
+.typing-dots span {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: #555;
+  border-radius: 50%;
+  margin: 0 3px;
+  animation: wave 1.5s infinite ease-in-out;
+}
+
+.typing-dots span:nth-child(1) {
+  animation-delay: 0s;
+}
+.typing-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.typing-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes wave {
+  0%, 60%, 100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-6px);
+  }
+}
+
+.bot-msg {
+  align-self: flex-start;
+  color: black;
+  background: #e4e6eb;
+  padding: 10px 14px;
+  border-radius: 10px;
+  max-width: 80%;
+  white-space: pre-wrap;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.user-msg {
+  align-self: flex-end;
+  color: white;
+  background: #007bff;
+  padding: 10px 14px;
+  border-radius: 10px;
+  max-width: 80%;
+  white-space: pre-wrap;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.input-area {
+  display: flex;
+  margin-top: 15px;
+}
+
+input {
+  flex: 1;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  outline: none;
+}
+
+input::placeholder {
+  color: #999;
+}
+
+button {
+  background: #007bff;
+  border: none;
+  color: white;
+  padding: 0 16px;
+  margin-left: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button:hover {
+  background: #0056b3;
+}
+/* ... your existing styles ... */
+
+/* Footer styling */
+.footer {
+  position: fixed;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 0.8rem;
+  color: rgb(80,80,80);
+}
